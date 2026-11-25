@@ -1,0 +1,143 @@
+{
+  "generated_at": "2026-11-25",
+  "root": ".",
+  "actual": {
+    "lanes": 5,
+    "lanes_names": [
+      "资源方",
+      "会员经理",
+      "运营",
+      "管理层",
+      "会员空间平台"
+    ],
+    "xor_gateways": 2,
+    "steps": 15,
+    "steps_drawio": 15,
+    "states": 7,
+    "fields": 28,
+    "field_visibility": {
+      "可见": 10,
+      "部分可见": 6,
+      "不可见": 12
+    },
+    "resource_types": 6,
+    "types_detail": {
+      "客户渠道": true,
+      "供应商服务": true,
+      "投资机构": true,
+      "人才服务": true,
+      "政策服务": true,
+      "专家顾问": true
+    },
+    "png": {
+      "width": 6000,
+      "height": 4100,
+      "bytes": 696885
+    },
+    "pdf": {
+      "pages": 1,
+      "mediabox": [
+        1684.08,
+        1151.03992
+      ],
+      "bytes": 350963
+    },
+    "sha256": {
+      "drawio": "df03bb2abaa208046bf10a735abf7af3d5bbbdf7fc37c894571f6910cf9c4d03",
+      "svg": "dc946262f0a55b84442b6be5259bc57796366b02c321df493509b609a9f0d789",
+      "png": "932f6061f60280cb269e2cecbb454c1749703a0b1d1551d534e5108aea3599ba",
+      "pdf": "76037a3c8ab8e8e59e2aef63411da65dd17d93bdf4c3fba6a85002e0f90d6dbc",
+      "step_table": "2ceba2c178870d29c0a74a562e2a7c7f7ded77d4255362e9804a672d7199f7a6",
+      "state_enum": "30d7cdd97d9e076ae8d4512cfea8f72272fedb3420dd8405e8c32b877da62737",
+      "catalog_fields": "508bd7a56045460164ec6bc33ea692f927f950dce9a4533c2358ee6da3b99590"
+    }
+  },
+  "claims": {
+    "fields_header": 28,
+    "states_header": 7,
+    "steps_header": 15
+  },
+  "checks": [
+    {
+      "item": "METRICS.lanes",
+      "declared": 5,
+      "actual": 5,
+      "ok": true
+    },
+    {
+      "item": "METRICS.xor_gateways",
+      "declared": 2,
+      "actual": 2,
+      "ok": true
+    },
+    {
+      "item": "METRICS.steps",
+      "declared": 15,
+      "actual": 15,
+      "ok": true
+    },
+    {
+      "item": "METRICS.states",
+      "declared": 7,
+      "actual": 7,
+      "ok": true
+    },
+    {
+      "item": "METRICS.fields",
+      "declared": 28,
+      "actual": 28,
+      "ok": true
+    },
+    {
+      "item": "METRICS.resource_types",
+      "declared": 6,
+      "actual": 6,
+      "ok": true
+    },
+    {
+      "item": "steps_drawio==steps_table",
+      "declared": 15,
+      "actual": 15,
+      "ok": true
+    },
+    {
+      "item": "fields_header",
+      "declared": 28,
+      "actual": 28,
+      "ok": true
+    },
+    {
+      "item": "states_header",
+      "declared": 7,
+      "actual": 7,
+      "ok": true
+    },
+    {
+      "item": "steps_header",
+      "declared": 15,
+      "actual": 15,
+      "ok": true
+    },
+    {
+      "item": "visibility.可见",
+      "declared": 10,
+      "actual": 10,
+      "ok": true
+    },
+    {
+      "item": "visibility.部分可见",
+      "declared": 6,
+      "actual": 6,
+      "ok": true
+    },
+    {
+      "item": "visibility.不可见",
+      "declared": 12,
+      "actual": 12,
+      "ok": true
+    }
+  ],
+  "matched": 13,
+  "total": 13,
+  "result": "PASS"
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "2267",
+  "task_code": "S1-BP-025",
+  "version": "1.0.0",
+  "generated_on": "2026-11-25",
+  "lanes": 5,
+  "lanes_names": [
+    "资源方",
+    "会员经理",
+    "运营",
+    "管理层",
+    "会员空间平台"
+  ],
+  "xor_gateways": 2,
+  "process_nodes": 10,
+  "steps": 15,
+  "states": 7,
+  "fields": 28,
+  "field_visibility": {
+    "可见": 10,
+    "部分可见": 6,
+    "不可见": 12
+  },
+  "resource_types": 6,
+  "edges": 26,
+  "timer_nodes": 1,
+  "terminals": 2,
+  "ratings_scale": "1-5",
+  "pause_threshold": 3,
+  "review_cycle_months": 12
+}

@@ -1,0 +1,56 @@
+{
+  "reviewed_at": "2026-11-25T21:05:00+08:00",
+  "image": "diagram/resource-onboarding-swimlane.png",
+  "image_sha256": "932f6061f60280cb269e2cecbb454c1749703a0b1d1551d534e5108aea3599ba",
+  "method": "6000x4100 PNG full view + 2x crops (left, right, middle, footer); draw.io 32.7.4 export cross-check",
+  "reviewer": "Hermes（生产方自检，非独立审核）",
+  "conclusion": "PASS",
+  "checks": [
+    {
+      "item": "文字溢出",
+      "result": "PASS",
+      "note": "浏览器实测 128 个 text、25 个 fit 容器，0 溢出；目检卡片/注记/页脚无截断或压边"
+    },
+    {
+      "item": "泳道与状态标签",
+      "result": "PASS",
+      "note": "5 条泳道齐全；状态标签未遮挡节点标题；7 个状态名均可见"
+    },
+    {
+      "item": "S15 → S14 一致性",
+      "result": "PASS",
+      "note": "资源方退出（S15）改为汇入下架并归档（S14），S14 再进已下架终态；S15 不再直达终态，与步骤表一致"
+    },
+    {
+      "item": "箭头与连线",
+      "result": "PASS",
+      "note": "无穿框；S15 的竖直通道在终态左侧 20px 处下行，进入 S14 东侧；S14→终态的「归档」标签移到边下方，不再压 S14 角标"
+    },
+    {
+      "item": "排他网关",
+      "result": "PASS",
+      "note": "G1/G2 菱形、× 标记与分支标签（通过/补件/拒绝；通过/不通过）清楚"
+    },
+    {
+      "item": "定时器与待确认",
+      "result": "PASS",
+      "note": "双圆时钟 + 12 个月；阈值与周期两处「待客户确认」可读"
+    },
+    {
+      "item": "drawio 实开",
+      "result": "PASS",
+      "note": "draw.io 桌面版 32.7.4 打开并导出成功；详见 docs/drawio-open-check.md"
+    },
+    {
+      "item": "页眉页脚",
+      "result": "PASS",
+      "note": "标题、文档号、版本、虚构数据徽标、图例、4 条脚注齐全"
+    },
+    {
+      "item": "已知 minor",
+      "result": "NOTE",
+      "note": "① 会员空间平台泳道左侧留白较大（该泳道仅评价一步，保留不改语义）；② 补件回路与 P1→G1 主线有 1 处交叉，线型可区分；③ drawio 泳道标题因 horizontal=0 竖向显示，SVG/PDF 为水平标签带；④ PDF 字节含生成 ID，重渲染 SHA 会变"
+    }
+  ],
+  "image_sha256_note": "PNG 渲染确定；PDF 每次渲染字节可能不同（文档 ID），故此处只锚定 PNG。draw.io 导出另见 docs/drawio-export.png。"
+}

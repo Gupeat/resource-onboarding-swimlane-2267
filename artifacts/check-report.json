@@ -1,0 +1,646 @@
+{
+  "generated_at": "2026-11-25T14:30:49.082578+00:00",
+  "root": ".",
+  "full": true,
+  "checks": [
+    {
+      "id": "file:diagram/resource-onboarding-swimlane.drawio",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "diagram/resource-onboarding-swimlane.drawio exists and is non-empty"
+    },
+    {
+      "id": "file:diagram/resource-onboarding-swimlane.svg",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "diagram/resource-onboarding-swimlane.svg exists and is non-empty"
+    },
+    {
+      "id": "file:diagram/resource-onboarding-swimlane.png",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "diagram/resource-onboarding-swimlane.png exists and is non-empty"
+    },
+    {
+      "id": "file:diagram/resource-onboarding-swimlane.pdf",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "diagram/resource-onboarding-swimlane.pdf exists and is non-empty"
+    },
+    {
+      "id": "file:docs/step-table.md",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "docs/step-table.md exists and is non-empty"
+    },
+    {
+      "id": "file:docs/state-enum.md",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "docs/state-enum.md exists and is non-empty"
+    },
+    {
+      "id": "file:docs/catalog-fields.md",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "docs/catalog-fields.md exists and is non-empty"
+    },
+    {
+      "id": "file:artifacts/render-report.json",
+      "code": "E-RENDER-REPORT",
+      "ok": true,
+      "detail": "artifacts/render-report.json exists and is non-empty"
+    },
+    {
+      "id": "file:README.md",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "README.md exists and is non-empty"
+    },
+    {
+      "id": "file:03-EVIDENCE.md",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "03-EVIDENCE.md exists and is non-empty"
+    },
+    {
+      "id": "file:STATUS.md",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "STATUS.md exists and is non-empty"
+    },
+    {
+      "id": "file:REVIEW-REQUEST.md",
+      "code": "E-DELIVERABLE",
+      "ok": true,
+      "detail": "REVIEW-REQUEST.md exists and is non-empty"
+    },
+    {
+      "id": "file:integrations/s1_int_mock/mock_server.py",
+      "code": "E-S1MOCK",
+      "ok": true,
+      "detail": "integrations/s1_int_mock/mock_server.py exists and is non-empty"
+    },
+    {
+      "id": "file:integrations/s1_int_mock/fixtures/fictional-notes.json",
+      "code": "E-S1MOCK",
+      "ok": true,
+      "detail": "integrations/s1_int_mock/fixtures/fictional-notes.json exists and is non-empty"
+    },
+    {
+      "id": "lanes.count",
+      "code": "E-LANES",
+      "ok": true,
+      "detail": "lanes=5 expected 5"
+    },
+    {
+      "id": "lanes.names",
+      "code": "E-LANES",
+      "ok": true,
+      "detail": "lanes=['资源方', '会员经理', '运营', '管理层', '会员空间平台']"
+    },
+    {
+      "id": "xor.count",
+      "code": "E-GW-COUNT",
+      "ok": true,
+      "detail": "xor=2 expected 2"
+    },
+    {
+      "id": "xor.资质审核.present",
+      "code": "E-GW-COUNT",
+      "ok": true,
+      "detail": "gateway '资质审核' count=1"
+    },
+    {
+      "id": "xor.资质审核.out",
+      "code": "E-GW-BRANCH",
+      "ok": true,
+      "detail": "资质审核 outgoing=4 min=3"
+    },
+    {
+      "id": "xor.资质审核.branch.通过",
+      "code": "E-GW-BRANCH",
+      "ok": true,
+      "detail": "资质审核 branch '通过' present in outgoing labels"
+    },
+    {
+      "id": "xor.资质审核.branch.补件",
+      "code": "E-GW-BRANCH",
+      "ok": true,
+      "detail": "资质审核 branch '补件' present in outgoing labels"
+    },
+    {
+      "id": "xor.资质审核.branch.拒绝",
+      "code": "E-GW-BRANCH",
+      "ok": true,
+      "detail": "资质审核 branch '拒绝' present in outgoing labels"
+    },
+    {
+      "id": "xor.管理层复核.present",
+      "code": "E-GW-COUNT",
+      "ok": true,
+      "detail": "gateway '管理层复核' count=1"
+    },
+    {
+      "id": "xor.管理层复核.out",
+      "code": "E-GW-BRANCH",
+      "ok": true,
+      "detail": "管理层复核 outgoing=3 min=2"
+    },
+    {
+      "id": "xor.管理层复核.branch.通过",
+      "code": "E-GW-BRANCH",
+      "ok": true,
+      "detail": "管理层复核 branch '通过' present in outgoing labels"
+    },
+    {
+      "id": "xor.管理层复核.branch.不通过",
+      "code": "E-GW-BRANCH",
+      "ok": true,
+      "detail": "管理层复核 branch '不通过' present in outgoing labels"
+    },
+    {
+      "id": "steps.count",
+      "code": "E-STEPS",
+      "ok": true,
+      "detail": "steps=15 expected 15"
+    },
+    {
+      "id": "timer.count",
+      "code": "E-TIMER",
+      "ok": true,
+      "detail": "timers=1"
+    },
+    {
+      "id": "timer.12m",
+      "code": "E-TIMER",
+      "ok": true,
+      "detail": "timer label contains '12 个月'"
+    },
+    {
+      "id": "timer.waits",
+      "code": "E-TIMER",
+      "ok": true,
+      "detail": "timer label contains '待客户确认'"
+    },
+    {
+      "id": "terminals",
+      "code": "E-TERMINALS",
+      "ok": true,
+      "detail": "terminal states=['已下架', '已拒绝']"
+    },
+    {
+      "id": "states.drawio",
+      "code": "E-STATES",
+      "ok": true,
+      "detail": "missing=[]"
+    },
+    {
+      "id": "states.count.drawio",
+      "code": "E-STATES",
+      "ok": true,
+      "detail": "states=['审核中', '已上架', '已下架', '已拒绝', '已暂停', '待补件', '申请中']"
+    },
+    {
+      "id": "path.s15_s14",
+      "code": "E-S15-PATH",
+      "ok": true,
+      "detail": "S15 outgoing targets=['n-p9'] (expected n-p9)"
+    },
+    {
+      "id": "path.s15_no_terminal",
+      "code": "E-S15-PATH",
+      "ok": true,
+      "detail": "S15 must not connect directly to the 已下架 terminal"
+    },
+    {
+      "id": "path.s14_terminal",
+      "code": "E-S15-PATH",
+      "ok": true,
+      "detail": "S14 must connect to the 已下架 terminal"
+    },
+    {
+      "id": "svg.lanes",
+      "code": "E-LANES",
+      "ok": true,
+      "detail": "svg lanes=5"
+    },
+    {
+      "id": "svg.lane.names",
+      "code": "E-LANES",
+      "ok": true,
+      "detail": "svg lane names=['资源方', '会员经理', '运营', '管理层', '会员空间平台']"
+    },
+    {
+      "id": "svg.xor.count",
+      "code": "E-GW-COUNT",
+      "ok": true,
+      "detail": "svg xor=2"
+    },
+    {
+      "id": "svg.timer.count",
+      "code": "E-TIMER",
+      "ok": true,
+      "detail": "svg timers=1"
+    },
+    {
+      "id": "svg.states",
+      "code": "E-STATES",
+      "ok": true,
+      "detail": "missing=[]"
+    },
+    {
+      "id": "svg.chips",
+      "code": "E-STATES",
+      "ok": true,
+      "detail": "distinct chips=['审核中', '已上架', '已下架', '已暂停', '待补件', '申请中']"
+    },
+    {
+      "id": "svg.type.客户渠道",
+      "code": "E-TYPES",
+      "ok": true,
+      "detail": "resource type '客户渠道' in svg text"
+    },
+    {
+      "id": "svg.type.供应商服务",
+      "code": "E-TYPES",
+      "ok": true,
+      "detail": "resource type '供应商服务' in svg text"
+    },
+    {
+      "id": "svg.type.投资机构",
+      "code": "E-TYPES",
+      "ok": true,
+      "detail": "resource type '投资机构' in svg text"
+    },
+    {
+      "id": "svg.type.人才服务",
+      "code": "E-TYPES",
+      "ok": true,
+      "detail": "resource type '人才服务' in svg text"
+    },
+    {
+      "id": "svg.type.政策服务",
+      "code": "E-TYPES",
+      "ok": true,
+      "detail": "resource type '政策服务' in svg text"
+    },
+    {
+      "id": "svg.type.专家顾问",
+      "code": "E-TYPES",
+      "ok": true,
+      "detail": "resource type '专家顾问' in svg text"
+    },
+    {
+      "id": "svg.rating",
+      "code": "E-RATING",
+      "ok": true,
+      "detail": "1-5 rating scale"
+    },
+    {
+      "id": "svg.threshold",
+      "code": "E-PAUSE-TRIGGER",
+      "ok": true,
+      "detail": "avg < 3 in svg"
+    },
+    {
+      "id": "svg.complaint",
+      "code": "E-PAUSE-TRIGGER",
+      "ok": true,
+      "detail": "valid complaint in svg"
+    },
+    {
+      "id": "svg.timer12",
+      "code": "E-TIMER",
+      "ok": true,
+      "detail": "12 months in svg"
+    },
+    {
+      "id": "svg.timer.event",
+      "code": "E-TIMER",
+      "ok": true,
+      "detail": "timer event label"
+    },
+    {
+      "id": "svg.confirm.count",
+      "code": "E-CONFIRM",
+      "ok": true,
+      "detail": "待客户确认 count=3"
+    },
+    {
+      "id": "svg.confirm.kinds",
+      "code": "E-CONFIRM",
+      "ok": true,
+      "detail": "confirm kinds=['cycle', 'threshold']"
+    },
+    {
+      "id": "svg.visibility.options",
+      "code": "E-VISIBILITY-OPTIONS",
+      "ok": true,
+      "detail": "three visibility options present"
+    },
+    {
+      "id": "svg.agreement",
+      "code": "E-AGREEMENT",
+      "ok": true,
+      "detail": "'如有' condition present"
+    },
+    {
+      "id": "svg.provider.kind",
+      "code": "E-PROVIDER-KIND",
+      "ok": true,
+      "detail": "both provider kinds present"
+    },
+    {
+      "id": "svg.starts",
+      "code": "E-STARTS",
+      "ok": true,
+      "detail": "both entry points present"
+    },
+    {
+      "id": "svg.exit",
+      "code": "E-EXIT",
+      "ok": true,
+      "detail": "exit branch to delisted present"
+    },
+    {
+      "id": "svg.waiting",
+      "code": "E-EXIT",
+      "ok": true,
+      "detail": "pending-docs state present"
+    },
+    {
+      "id": "svg.meta",
+      "code": "E-META",
+      "ok": true,
+      "detail": "task code / stage / module in header"
+    },
+    {
+      "id": "steps.table.count",
+      "code": "E-STEPS",
+      "ok": true,
+      "detail": "step rows=15"
+    },
+    {
+      "id": "steps.table.ids",
+      "code": "E-STEPS",
+      "ok": true,
+      "detail": "ids=['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10', 'S11', 'S12', 'S13', 'S14', 'S15']"
+    },
+    {
+      "id": "steps.svg.crossref",
+      "code": "E-STEPS",
+      "ok": true,
+      "detail": "step ids missing from svg: []"
+    },
+    {
+      "id": "states.table.count",
+      "code": "E-STATES",
+      "ok": true,
+      "detail": "state rows=7"
+    },
+    {
+      "id": "states.table.ids",
+      "code": "E-STATES",
+      "ok": true,
+      "detail": "ids=['ST01', 'ST02', 'ST03', 'ST04', 'ST05', 'ST06', 'ST07']"
+    },
+    {
+      "id": "states.table.names",
+      "code": "E-STATES",
+      "ok": true,
+      "detail": "names=['申请中', '待补件', '审核中', '已上架', '已暂停', '已下架', '已拒绝']"
+    },
+    {
+      "id": "triggers.pause.section",
+      "code": "E-TRIGGERS",
+      "ok": true,
+      "detail": "pause trigger section"
+    },
+    {
+      "id": "triggers.delist.section",
+      "code": "E-TRIGGERS",
+      "ok": true,
+      "detail": "delist trigger section"
+    },
+    {
+      "id": "triggers.pause.count",
+      "code": "E-TRIGGERS",
+      "ok": true,
+      "detail": "pause rows=3"
+    },
+    {
+      "id": "triggers.delist.count",
+      "code": "E-TRIGGERS",
+      "ok": true,
+      "detail": "delist rows=4"
+    },
+    {
+      "id": "states.confirm",
+      "code": "E-CONFIRM",
+      "ok": true,
+      "detail": "待客户确认 in state table"
+    },
+    {
+      "id": "fields.count",
+      "code": "E-FIELDS",
+      "ok": true,
+      "detail": "field rows=28 min=12"
+    },
+    {
+      "id": "fields.ids",
+      "code": "E-FIELDS",
+      "ok": true,
+      "detail": "ids=['F01', 'F02', 'F03', 'F04', 'F05']...['F26', 'F27', 'F28']"
+    },
+    {
+      "id": "fields.visibility",
+      "code": "E-VISIBILITY",
+      "ok": true,
+      "detail": "bad visibility rows=[]"
+    },
+    {
+      "id": "fields.base",
+      "code": "E-FIELDS",
+      "ok": true,
+      "detail": "missing base keys=[]"
+    },
+    {
+      "id": "fields.base.types",
+      "code": "E-FIELD-TYPE",
+      "ok": true,
+      "detail": "bad base types=[]"
+    },
+    {
+      "id": "fields.money",
+      "code": "E-MONEY",
+      "ok": true,
+      "detail": "no money-like field in this design"
+    },
+    {
+      "id": "external.urls",
+      "code": "E-EXTERNAL",
+      "ok": true,
+      "detail": "external hosts=[]"
+    },
+    {
+      "id": "external.sdk",
+      "code": "E-EXTERNAL",
+      "ok": true,
+      "detail": "third-party imports=[]"
+    },
+    {
+      "id": "scope.runtime.imports",
+      "code": "E-SCOPE",
+      "ok": true,
+      "detail": "runtime imports=[]"
+    },
+    {
+      "id": "metrics.consistency",
+      "code": "E-METRICS",
+      "ok": true,
+      "detail": "mismatch={}"
+    },
+    {
+      "id": "metrics.visibility",
+      "code": "E-METRICS",
+      "ok": true,
+      "detail": "declared={'可见': 10, '部分可见': 6, '不可见': 12} actual={'可见': 10, '部分可见': 6, '不可见': 12}"
+    },
+    {
+      "id": "render.overflow",
+      "code": "E-OVERFLOW",
+      "ok": true,
+      "detail": "fit overflow=0"
+    },
+    {
+      "id": "render.canvas",
+      "code": "E-OVERFLOW",
+      "ok": true,
+      "detail": "canvas overflow=0"
+    },
+    {
+      "id": "render.texts",
+      "code": "E-OVERFLOW",
+      "ok": true,
+      "detail": "texts_checked=128"
+    },
+    {
+      "id": "render.fit.groups",
+      "code": "E-OVERFLOW",
+      "ok": true,
+      "detail": "fit_groups=25"
+    },
+    {
+      "id": "render.browser",
+      "code": "E-OVERFLOW",
+      "ok": true,
+      "detail": "browser=Edg/156.0.4314.58"
+    },
+    {
+      "id": "png.signature",
+      "code": "E-PNG",
+      "ok": true,
+      "detail": "PNG signature"
+    },
+    {
+      "id": "png.dimensions",
+      "code": "E-PNG",
+      "ok": true,
+      "detail": "png=6000x4100"
+    },
+    {
+      "id": "png.report.bytes",
+      "code": "E-PNG",
+      "ok": true,
+      "detail": "report bytes=696885 actual=696885"
+    },
+    {
+      "id": "pdf.header",
+      "code": "E-PDF",
+      "ok": true,
+      "detail": "PDF header"
+    },
+    {
+      "id": "pdf.mediabox",
+      "code": "E-PDF",
+      "ok": true,
+      "detail": "mediabox=1684.08x1151.04pt ratio=1.4631"
+    },
+    {
+      "id": "pdf.pages",
+      "code": "E-PDF",
+      "ok": true,
+      "detail": "pages=1"
+    },
+    {
+      "id": "pdf.text_ops",
+      "code": "E-PDF",
+      "ok": true,
+      "detail": "text-show ops=1435"
+    },
+    {
+      "id": "pdf.fonts",
+      "code": "E-PDF",
+      "ok": true,
+      "detail": "embedded fonts=3"
+    },
+    {
+      "id": "pdf.report.bytes",
+      "code": "E-PDF",
+      "ok": true,
+      "detail": "report bytes=350963 actual=350963"
+    },
+    {
+      "id": "hygiene.paths",
+      "code": "E-PATH",
+      "ok": true,
+      "detail": "absolute user paths=[]"
+    },
+    {
+      "id": "hygiene.secrets",
+      "code": "E-SECRET",
+      "ok": true,
+      "detail": "secret-like=[]"
+    },
+    {
+      "id": "hygiene.pii",
+      "code": "E-PII",
+      "ok": true,
+      "detail": "phone/id-like=[]"
+    },
+    {
+      "id": "scope.noapp",
+      "code": "E-SCOPE",
+      "ok": true,
+      "detail": "runtime dirs=[]"
+    },
+    {
+      "id": "scope.deps",
+      "code": "E-STACK",
+      "ok": true,
+      "detail": "third-party deps=[]"
+    },
+    {
+      "id": "s1mock.localhost",
+      "code": "E-S1MOCK",
+      "ok": true,
+      "detail": "mock binds 127.0.0.1"
+    },
+    {
+      "id": "s1mock.endpoints",
+      "code": "E-S1MOCK",
+      "ok": true,
+      "detail": "documented endpoints"
+    },
+    {
+      "id": "s1mock.readme",
+      "code": "E-S1MOCK",
+      "ok": true,
+      "detail": "README integration section"
+    }
+  ],
+  "total": 106,
+  "failed": 0,
+  "result": "PASS"
+}

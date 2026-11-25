@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-11-25T14:30:48.233Z",
+  "browser": "msedge.exe",
+  "browser_version": "Edg/156.0.4314.58",
+  "protocol_version": "1.3",
+  "canvas": {
+    "width": 3000,
+    "height": 2050,
+    "scale": 2
+  },
+  "texts_checked": 128,
+  "canvas_overflow": [],
+  "fit_groups_checked": 25,
+  "overflow": [],
+  "png": {
+    "path": "diagram/resource-onboarding-swimlane.png",
+    "bytes": 696885
+  },
+  "pdf": {
+    "path": "diagram/resource-onboarding-swimlane.pdf",
+    "bytes": 350963
+  }
+}

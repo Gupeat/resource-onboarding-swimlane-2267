@@ -1,0 +1,83 @@
+{
+  "baseline": {
+    "command": "python scripts/check_delivery.py --root <copy>",
+    "exit_code": 0,
+    "output_tail": [
+      "checked=97 failed=0",
+      "PASS: all structural assertions satisfied"
+    ]
+  },
+  "cases": [
+    {
+      "id": "N1",
+      "name": "删除运营泳道",
+      "expected_code": "E-LANES",
+      "exit_code": 1,
+      "killed": true,
+      "result": "KILLED",
+      "matched_lines": [
+        "FAIL E-LANES [lanes.count] lanes=4 expected 5",
+        "FAIL E-LANES [lanes.names] lanes=['��Դ��', '��Ա����', '������', '��Ա�ռ�ƽ̨']"
+      ]
+    },
+    {
+      "id": "N2",
+      "name": "把「已暂停」改名为「暂停中」",
+      "expected_code": "E-STATES",
+      "exit_code": 1,
+      "killed": true,
+      "result": "KILLED",
+      "matched_lines": [
+        "FAIL E-STATES [states.table.names] names=['������', '������', '�����', '���ϼ�', '��ͣ��', '���¼�', '�Ѿܾ�']"
+      ]
+    },
+    {
+      "id": "N3",
+      "name": "删除字段 F07（软删除）",
+      "expected_code": "E-FIELDS",
+      "exit_code": 1,
+      "killed": true,
+      "result": "KILLED",
+      "matched_lines": [
+        "FAIL E-FIELDS [fields.ids] ids=['F01', 'F02', 'F03', 'F04', 'F05']...['F26', 'F27', 'F28']"
+      ]
+    },
+    {
+      "id": "N4",
+      "name": "删除管理层复核网关",
+      "expected_code": "E-GW-COUNT",
+      "exit_code": 1,
+      "killed": true,
+      "result": "KILLED",
+      "matched_lines": [
+        "FAIL E-GW-COUNT [xor.count] xor=1 expected 2",
+        "FAIL E-GW-COUNT [xor.�����㸴��.present] gateway '�����㸴��' count=0"
+      ]
+    },
+    {
+      "id": "N5",
+      "name": "删除「有效投诉」触发条件",
+      "expected_code": "E-PAUSE-TRIGGER",
+      "exit_code": 1,
+      "killed": true,
+      "result": "KILLED",
+      "matched_lines": [
+        "FAIL E-PAUSE-TRIGGER [svg.complaint] valid complaint in svg"
+      ]
+    },
+    {
+      "id": "N6",
+      "name": "删除 S15→S14 退出边",
+      "expected_code": "E-S15-PATH",
+      "exit_code": 1,
+      "killed": true,
+      "result": "KILLED",
+      "matched_lines": [
+        "FAIL E-S15-PATH [path.s15_s14] S15 outgoing targets=[] (expected n-p9)"
+      ]
+    }
+  ],
+  "total": 6,
+  "killed": 6,
+  "all_killed": true
+}
