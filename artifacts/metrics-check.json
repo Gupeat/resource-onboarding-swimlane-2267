@@ -32,7 +32,7 @@
     "png": {
       "width": 6000,
       "height": 4100,
-      "bytes": 696885
+      "bytes": 696455
     },
     "pdf": {
       "pages": 1,
@@ -40,16 +40,16 @@
         1684.08,
         1151.03992
       ],
-      "bytes": 350963
+      "bytes": 350960
     },
     "sha256": {
-      "drawio": "df03bb2abaa208046bf10a735abf7af3d5bbbdf7fc37c894571f6910cf9c4d03",
-      "svg": "dc946262f0a55b84442b6be5259bc57796366b02c321df493509b609a9f0d789",
-      "png": "932f6061f60280cb269e2cecbb454c1749703a0b1d1551d534e5108aea3599ba",
-      "pdf": "76037a3c8ab8e8e59e2aef63411da65dd17d93bdf4c3fba6a85002e0f90d6dbc",
-      "step_table": "2ceba2c178870d29c0a74a562e2a7c7f7ded77d4255362e9804a672d7199f7a6",
-      "state_enum": "30d7cdd97d9e076ae8d4512cfea8f72272fedb3420dd8405e8c32b877da62737",
-      "catalog_fields": "508bd7a56045460164ec6bc33ea692f927f950dce9a4533c2358ee6da3b99590"
+      "drawio": "d15a16e915a1cc31c0e605aac35fc52cc32d411d33e88f5c5726a27ce7429a6b",
+      "svg": "187e7890b382b03a5698e9ccede81c16e9f2174c955a8034e50574c74f5fecf5",
+      "png": "d8df2994c75f89c96bf1a82f14764593f0bf3d9eece76787d3825d9eb8f1d102",
+      "pdf": "cd8d453b50e54d98aaedc423142788dd089765f423cf3a8708f5bbdb72d176cb",
+      "step_table": "3c90c9ba5a34eea6ea3185cfda695dc453eedcebebbc05af5ef4c77f2a1b0636",
+      "state_enum": "09fa9810cd64043337c11484f20aa7cb5926ab46f2570aceda5a4eaffc72c00d",
+      "catalog_fields": "f556d02b17138e187aedd68045ee97819c3bc24ebd06a6d4094707b4917e193a"
     }
   },
   "claims": {

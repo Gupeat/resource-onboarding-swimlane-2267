@@ -1,8 +1,8 @@
 # draw.io 实开验证记录 · #2267（S1-BP-025）
 
-- 验证日期：2026-11-25
+- 验证日期：2026-11-25（v1.0.1）
 - 验证对象：`diagram/resource-onboarding-swimlane.drawio`
-- drawio SHA-256：`df03bb2abaa208046bf10a735abf7af3d5bbbdf7fc37c894571f6910cf9c4d03`
+- drawio SHA-256：`d15a16e915a1cc31c0e605aac35fc52cc32d411d33e88f5c5726a27ce7429a6b`
 - 结论：**PASS**（桌面版打开、解析、导出成功；可编辑；文字未溢出）
 
 ## 1. 环境与方法
@@ -15,7 +15,7 @@
 | 版本核验 | `drawio.exe --version` → `32.7.4`（exit 0） |
 | 打开方式 | 桌面版双击/命令行打开 `.drawio`，编辑器窗口标题为 `resource-onboarding-swimlane.drawio - draw.io` |
 | 导出核验 | `drawio.exe --export --format png --output docs/drawio-export.png --scale 1 --border 8 --no-sandbox --disable-gpu diagram/resource-onboarding-swimlane.drawio`（exit 0，2880×2014） |
-| 截图 | `docs/drawio-open-check.png`（桌面版窗口，1550×878）；`docs/drawio-export.png`（draw.io 自身浅色渲染，2880×2014） |
+| 截图 | `docs/drawio-open-check.png`（v1.0.1 桌面版窗口，1550×878）；`docs/drawio-export.png`（v1.0.1 draw.io 自身浅色渲染，2880×2014） |
 
 > 桌面版跟随系统深色主题，GUI 截图为深色；同一文件用 draw.io CLI 以浅色渲染导出 `drawio-export.png`，用于清晰核对文字。未在 GUI 中保存任何修改，磁盘文件 SHA 与验证前一致。
 

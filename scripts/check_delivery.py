@@ -444,6 +444,25 @@ class Checker:
                  f"browser={r.get('browser_version')}")
         return r
 
+    def check_encoding(self):
+        bad = []
+        skip = {".git", "__pycache__", "node_modules", ".venv", "venv", ".pytest_cache"}
+        for dirpath, dirnames, filenames in os.walk(self.root):
+            dirnames[:] = [d for d in dirnames if d not in skip]
+            for fn in filenames:
+                if os.path.splitext(fn)[1].lower() not in TEXT_EXTS:
+                    continue
+                p = os.path.join(dirpath, fn)
+                rel = os.path.relpath(p, self.root)
+                try:
+                    s = open(p, encoding="utf-8").read()
+                except (OSError, UnicodeDecodeError) as e:
+                    bad.append(f"{rel}: {type(e).__name__}")
+                    continue
+                if "\ufffd" in s:
+                    bad.append(f"{rel}: U+FFFD")
+        self.add("encoding.utf8", "E-ENCODING", not bad, f"bad encoding={bad[:5]}")
+
     def check_hygiene(self):
         bad_paths = []
         bad_secrets = []
@@ -523,6 +542,7 @@ class Checker:
             report = None
         self.check_png_pdf(report)
         self.check_hygiene()
+        self.check_encoding()
         self.check_scope()
         if self.full:
             self.check_s1mock()

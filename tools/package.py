@@ -83,9 +83,25 @@ def write_manifest(files):
 
 
 def run(cmd, cwd):
+    env = dict(os.environ, PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
     p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True,
-                       encoding="utf-8", errors="replace")
+                       encoding="utf-8", errors="replace", env=env)
     return p.returncode, ((p.stdout or "") + (p.stderr or ""))
+
+
+def bad_encoding(files):
+    bad = []
+    for rel, path in files:
+        if os.path.splitext(rel)[1].lower() not in {".md", ".py", ".mjs", ".js", ".json", ".svg", ".drawio", ".html", ".txt", ".csv", ".yml", ".yaml"}:
+            continue
+        try:
+            s = open(path, encoding="utf-8").read()
+        except (OSError, UnicodeDecodeError) as e:
+            bad.append(f"{rel}: {type(e).__name__}")
+            continue
+        if "\ufffd" in s:
+            bad.append(f"{rel}: U+FFFD")
+    return bad
 
 
 def main():
@@ -99,6 +115,10 @@ def main():
         return 2
 
     files = collect()
+    bad = bad_encoding(files)
+    if bad:
+        print(f"E-PACKAGE: bad text encoding: {bad[:5]}")
+        return 2
     m = write_manifest(files)
     # include the manifest itself so `sha256sum -c MANIFEST.sha256` works after unzip
     n = build_zip(files + [("MANIFEST.sha256", MANIFEST)])
@@ -181,7 +201,7 @@ def main():
         lines.append("")
         lines.append("## 2. 外部闸门（kit pre_submit_check）")
         lines.append("")
-        lines.append("- 结果：**10 PASS / 2 WARN / 0 FAIL**（详见项目级 `pre-submit-gate.md`）")
+        lines.append("- 结果：见项目级 `pre-submit-gate.md`（由 reviewer 对最终包执行）")
         for w in warnings:
             lines.append(f"- WARN：{w}")
         lines.append("")

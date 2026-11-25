@@ -3,7 +3,7 @@
     "command": "python scripts/check_delivery.py --root <copy>",
     "exit_code": 0,
     "output_tail": [
-      "checked=97 failed=0",
+      "checked=98 failed=0",
       "PASS: all structural assertions satisfied"
     ]
   },
@@ -17,7 +17,7 @@
       "result": "KILLED",
       "matched_lines": [
         "FAIL E-LANES [lanes.count] lanes=4 expected 5",
-        "FAIL E-LANES [lanes.names] lanes=['��Դ��', '��Ա����', '������', '��Ա�ռ�ƽ̨']"
+        "FAIL E-LANES [lanes.names] lanes=['资源方', '会员经理', '管理层', '会员空间平台']"
       ]
     },
     {
@@ -28,7 +28,7 @@
       "killed": true,
       "result": "KILLED",
       "matched_lines": [
-        "FAIL E-STATES [states.table.names] names=['������', '������', '�����', '���ϼ�', '��ͣ��', '���¼�', '�Ѿܾ�']"
+        "FAIL E-STATES [states.table.names] names=['申请中', '待补件', '审核中', '已上架', '暂停中', '已下架', '已拒绝']"
       ]
     },
     {
@@ -51,7 +51,7 @@
       "result": "KILLED",
       "matched_lines": [
         "FAIL E-GW-COUNT [xor.count] xor=1 expected 2",
-        "FAIL E-GW-COUNT [xor.�����㸴��.present] gateway '�����㸴��' count=0"
+        "FAIL E-GW-COUNT [xor.管理层复核.present] gateway '管理层复核' count=0"
       ]
     },
     {
@@ -75,9 +75,20 @@
       "matched_lines": [
         "FAIL E-S15-PATH [path.s15_s14] S15 outgoing targets=[] (expected n-p9)"
       ]
+    },
+    {
+      "id": "N7",
+      "name": "向文档注入 U+FFFD（编码破坏）",
+      "expected_code": "E-ENCODING",
+      "exit_code": 1,
+      "killed": true,
+      "result": "KILLED",
+      "matched_lines": [
+        "FAIL E-ENCODING [encoding.utf8] bad encoding=['docs\\\\step-table.md: U+FFFD']"
+      ]
     }
   ],
-  "total": 6,
-  "killed": 6,
+  "total": 7,
+  "killed": 7,
   "all_killed": true
 }

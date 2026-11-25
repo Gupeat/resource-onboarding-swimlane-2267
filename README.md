@@ -1,7 +1,7 @@
 # 资源方入库审核与资源目录维护 · 流程泳道图
 
 - 任务：#2267（S1-BP-025）· Stage i 蓝图与命名 · 业务蓝图与流程图
-- 版本：v1.0.0 · 2026-11-25
+- 版本：v1.0.1 · 2026-11-25
 - 交付性质：**设计交付（候选）**。本仓库是供 reviewer 独立复核的候选，不是已发布版本，也不代表“可提交”。
 - 数据性质：**全部为虚构示例**。不含客户名称、真实个人信息或企业信息。
 
@@ -66,7 +66,7 @@ node tools/render.mjs
 # 3) 结构/数量/一致性检查（不导入 model.py，独立解析产物）
 python scripts/check_delivery.py --root . --full
 
-# 4) 真实反例：删泳道、改状态名、删字段、删网关、删触发条件、删 S15→S14 退出边
+# 4) 真实反例：删泳道、改状态名、删字段、删网关、删触发条件、删 S15→S14 退出边、注入 U+FFFD
 python scripts/run_negative_tests.py
 
 # 5) 数字独立重算（与 docs/METRICS.json、文档标题中的数字对账）
@@ -131,5 +131,6 @@ curl "http://127.0.0.1:8765/api/v1/sop-cards?project=2267"
 
 ## 8. 版本
 
+- v1.0.1 · 2026-11-25 · 证据编码修复：子进程强制 UTF-8，检查器新增 U+FFFD 断言与 N7 反例。
 - v1.0.0 · 2026-11-25 · 初版候选：5 泳道、2 XOR、7 状态、28 字段、15 步骤、定时复审、S1-INT mock。
 - 修改流程：改 `tools/model.py` → `python tools/build.py` → `node tools/render.mjs` → 全套检查 → 升 patch 版本。

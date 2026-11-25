@@ -1,7 +1,7 @@
 # STATUS · #2267（S1-BP-025）
 
 - 任务号：2267
-- 版本：v1.0.0
+- 版本：v1.0.1
 - 更新时间：2026-11-25
 - 当前阶段：**candidate（候选冻结中，待独立审核）**
 
@@ -35,10 +35,10 @@
 - 需求条目表 R01–R36，覆盖【本单范围】/交付物/技术约定/AC/数据/依赖。
 - drawio 源文件、SVG、PNG（6000×4100）、PDF（A2 横向，1 页）。
 - 步骤说明表 S01–S15；状态枚举表 ST01–ST07 + 暂停/下架触发条件；字段清单 F01–F28 + 会员可见性。
-- 检查脚本（独立解析 drawio/SVG/Markdown，106 项断言）。
+- 检查脚本（独立解析 drawio/SVG/Markdown，107 项断言）。
 - 图与表一致性：S15 资源方退出 → S14 下架并归档 → 已下架；删除 S15 直达终态的旧边。
 - draw.io 桌面版 32.7.4 实开并导出成功；记录与截图见 `docs/drawio-open-check.md`。
-- 6 个真实反例：删泳道、改状态名、删字段、删网关、删触发条件、删 S15→S14 退出边。
+- 7 个真实反例：删泳道、改状态名、删字段、删网关、删触发条件、删 S15→S14 退出边、注入 U+FFFD 编码破坏。
 - S1-INT mock（127.0.0.1）+ 导入报告（明确标注虚构）。
 - 浏览器文字溢出测量：0 溢出（详见 `artifacts/render-report.json`）。
 
@@ -46,8 +46,8 @@
 
 摘要（逐项以 `artifacts/acceptance.json` 与报告为准）：
 
-- 结构检查：106 项，0 失败（`check-report.json`）
-- 反例：5 / 5 KILLED（`negative-report.json`）
+- 结构检查：107 项，0 失败（`check-report.json`）
+- 反例：7 / 7 KILLED（`negative-report.json`）
 - 数字重算：13 / 13 matched（`metrics-check.json`）
 - 渲染：128 个 text、25 个容器，0 溢出（`render-report.json`）
 - 干净副本：`check_delivery.py --full` exit 0（acceptance `clean-copy` stage）

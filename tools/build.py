@@ -564,7 +564,7 @@ def build_drawio() -> str:
               "left", "#1F2937")
     text_cell("h-sub", "流程泳道图 · 资源方 / 会员经理 / 运营 / 管理层 / 会员空间平台",
               70, 88, 1400, 20, 11, False, "left", "#5B6779")
-    text_cell("h-meta", "任务 #2267 · 文档 S1-BP-025-D01 · v1.0.0", 2000, 28, 930, 18,
+    text_cell("h-meta", "任务 #2267 · 文档 S1-BP-025-D01 · v1.0.1", 2000, 28, 930, 18,
               10, True, "right", "#334155")
     text_cell("h-date", "生成日期 2026-11-25 · 页面 A2 横向", 2000, 48, 930, 16,
               9, False, "right", "#5B6779")
@@ -580,7 +580,7 @@ def build_drawio() -> str:
               70, 1966, 2860, 16, 9, False, "left", "#5B6779")
     text_cell("f-note-4", "范围：本图只覆盖资源方入库、上架与退出；不含撮合交易、结算、合同正文与系统实现。",
               70, 1984, 2860, 16, 9, False, "left", "#5B6779")
-    text_cell("f-version", "drawio + SVG + PNG + PDF · 同一内容源 · v1.0.0", 2000, 2008, 930, 14,
+    text_cell("f-version", "drawio + SVG + PNG + PDF · 同一内容源 · v1.0.1", 2000, 2008, 930, 14,
               8, False, "right", "#8793A3")
 
     # nodes

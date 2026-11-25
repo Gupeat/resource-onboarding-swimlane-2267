@@ -101,9 +101,10 @@ def free_port():
 
 def run_stage(name, cmd, timeout=600, env=None):
     t0 = time.time()
+    child_env = dict(env or os.environ, PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
     try:
         p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
-                           encoding="utf-8", errors="replace", timeout=timeout, env=env)
+                           encoding="utf-8", errors="replace", timeout=timeout, env=child_env)
         rc, out = p.returncode, (p.stdout or "") + (p.stderr or "")
     except subprocess.TimeoutExpired as e:
         rc, out = 124, f"timeout after {timeout}s: {e}"
@@ -125,7 +126,7 @@ def main():
         os.remove(VERDICT)
     running = {
         "task_id": "2267",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "status": "RUNNING",
         "started_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
         "note": "FAIL-first wrapper: no PASS is written until every stage succeeds.",
@@ -140,9 +141,9 @@ def main():
         run_stage("build", [sys.executable, "tools/build.py"]),
         run_stage("s1-int", [sys.executable, "tools/import_s1_notes.py"]),
         run_stage("render", [node or "node", "tools/render.mjs"]),
+        run_stage("negative", [sys.executable, "scripts/run_negative_tests.py"]),
         run_stage("check", [sys.executable, "scripts/check_delivery.py", "--root", ".",
                             "--full", "--json", "artifacts/check-report.json"]),
-        run_stage("negative", [sys.executable, "scripts/run_negative_tests.py"]),
         run_stage("numbers", [sys.executable, "tools/metrics.py"]),
     ]
 
@@ -163,7 +164,7 @@ def main():
 
     # 8) S1-INT mock smoke test
     port = free_port()
-    env = dict(os.environ, PORT=str(port), S1INT_VERBOSE="")
+    env = dict(os.environ, PORT=str(port), S1INT_VERBOSE="", PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
     proc = subprocess.Popen([sys.executable, "integrations/s1_int_mock/mock_server.py"],
                             cwd=ROOT, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     mock_ok = False
@@ -207,7 +208,7 @@ def main():
     verdict = {
         "task_id": "2267",
         "task_code": "S1-BP-025",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "status": status,
         "started_at": running["started_at"],
         "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),

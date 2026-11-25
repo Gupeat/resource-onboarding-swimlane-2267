@@ -1,7 +1,7 @@
 # REVIEW-REQUEST · #2267（S1-BP-025）
 
 - 任务号：2267
-- 版本：v1.0.0
+- 版本：v1.0.1
 - 候选目录：`projects/2267/repo/`
 - 候选包：`projects/2267/artifacts/candidate.zip`（包 SHA-256 见项目级 `artifacts/gate-report.md` 与包内 `MANIFEST.sha256`）
 - 生成时间：2026-11-25
@@ -27,7 +27,7 @@
 - 从 `task-2267.json` 原文独立生产，未使用 DSH 侧冻结尝试的结论或素材（已隔离到 `_frozen-prior-attempt/`）。
 - 产出 drawio/SVG/PNG/PDF、步骤表 S01–S15、状态表 ST01–ST07、字段表 F01–F28。
 - 图中：5 泳道、2 个排他网关、7 状态、6 类资源、1–5 分评价、暂停/下架条件、12 个月定时复审、两处「待客户确认」。
-- 检查器独立解析 drawio/SVG/Markdown，共 106 项断言；6 个真实篡改反例。
+- 检查器独立解析 drawio/SVG/Markdown，共 107 项断言；7 个真实篡改反例。
 - S1-INT 使用 127.0.0.1 mock 与虚构 fixture；README 写明端点、schema 与替换步骤。
 - draw.io 桌面版 32.7.4 实开并导出成功（5 泳道/2 网关/15 步/7 状态/无文字溢出/可编辑）；记录与截图见 `docs/drawio-open-check.md`。
 - 图与表一致性：S15（资源方退出）改为汇入 S14（下架并归档），S14 再进已下架终态；删除 S15 直达终态的边。
@@ -47,8 +47,8 @@ python tools/package.py
 
 最近一次（`artifacts/acceptance.json`，PASS）：
 
-- 结构检查：106 项，0 失败（`check-report.json`）
-- 反例：6/6 KILLED（`negative-report.json`）
+- 结构检查：107 项，0 失败（`check-report.json`）
+- 反例：7/7 KILLED（`negative-report.json`）
 - 数字独立重算：13/13（`metrics-check.json`）
 - 干净副本：`check_delivery.py --full` exit 0
 - 渲染：128 个 text、25 个容器，0 溢出
@@ -79,8 +79,8 @@ python tools/package.py
 
 - `03-EVIDENCE.md`（由 `tools/write_evidence.py` 机器生成）
 - `artifacts/acceptance.json`（FAIL-first 验收）
-- `artifacts/check-report.json`（106 项）
-- `artifacts/negative-report.json`（6 个真实反例）
+- `artifacts/check-report.json`（107 项）
+- `artifacts/negative-report.json`（7 个真实反例）
 - `artifacts/metrics-check.json`（13 项数字对账）
 - `artifacts/render-report.json`（浏览器文字测量）
 - `artifacts/visual-review.json`（PNG 目检锚点与结论）

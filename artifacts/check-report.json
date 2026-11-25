@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T14:30:49.082578+00:00",
+  "generated_at": "2026-11-25T15:23:29.300780+00:00",
   "root": ".",
   "full": true,
   "checks": [
@@ -553,7 +553,7 @@
       "id": "png.report.bytes",
       "code": "E-PNG",
       "ok": true,
-      "detail": "report bytes=696885 actual=696885"
+      "detail": "report bytes=696455 actual=696455"
     },
     {
       "id": "pdf.header",
@@ -589,7 +589,7 @@
       "id": "pdf.report.bytes",
       "code": "E-PDF",
       "ok": true,
-      "detail": "report bytes=350963 actual=350963"
+      "detail": "report bytes=350960 actual=350960"
     },
     {
       "id": "hygiene.paths",
@@ -608,6 +608,12 @@
       "code": "E-PII",
       "ok": true,
       "detail": "phone/id-like=[]"
+    },
+    {
+      "id": "encoding.utf8",
+      "code": "E-ENCODING",
+      "ok": true,
+      "detail": "bad encoding=[]"
     },
     {
       "id": "scope.noapp",
@@ -640,7 +646,7 @@
       "detail": "README integration section"
     }
   ],
-  "total": 106,
+  "total": 107,
   "failed": 0,
   "result": "PASS"
 }

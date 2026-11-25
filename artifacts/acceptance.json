@@ -1,10 +1,10 @@
 {
   "task_id": "2267",
   "task_code": "S1-BP-025",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "PASS",
-  "started_at": "2026-11-25T22:30:43+0800",
-  "finished_at": "2026-11-25T22:30:53+0800",
+  "started_at": "2026-11-25T23:23:20+0800",
+  "finished_at": "2026-11-25T23:23:30+0800",
   "python": "3.12.14",
   "node": "v26.7.0",
   "stages": [
@@ -12,7 +12,7 @@
       "name": "build",
       "command": "python tools/build.py",
       "exit_code": 0,
-      "duration_s": 0.16,
+      "duration_s": 0.15,
       "output_tail": [
         "[build] svg      54,711 bytes",
         "[build] drawio   41,966 bytes",
@@ -33,39 +33,39 @@
       "name": "render",
       "command": "node tools/render.mjs",
       "exit_code": 0,
-      "duration_s": 4.61,
+      "duration_s": 4.63,
       "output_tail": [
         "[render] browser: Edg/156.0.4314.58",
         "[render] texts=128 fit_groups=25",
         "[render] canvas_overflow=0 fit_overflow=0",
-        "[render] png 696885 bytes -> <repo>\\diagram\\resource-onboarding-swimlane.png",
-        "[render] pdf 350963 bytes -> <repo>\\diagram\\resource-onboarding-swimlane.pdf"
-      ]
-    },
-    {
-      "name": "check",
-      "command": "python scripts/check_delivery.py --root . --full --json artifacts/check-report.json",
-      "exit_code": 0,
-      "duration_s": 0.29,
-      "output_tail": [
-        "checked=106 failed=0",
-        "PASS: all structural assertions satisfied"
+        "[render] png 696455 bytes -> <repo>\\diagram\\resource-onboarding-swimlane.png",
+        "[render] pdf 350960 bytes -> <repo>\\diagram\\resource-onboarding-swimlane.pdf"
       ]
     },
     {
       "name": "negative",
       "command": "python scripts/run_negative_tests.py",
       "exit_code": 0,
-      "duration_s": 3.11,
+      "duration_s": 3.68,
       "output_tail": [
-        "[baseline] exit=0 PASS",
         "[N1] 删除运营泳道: exit=1 expect=E-LANES -> KILLED",
         "[N2] 把「已暂停」改名为「暂停中」: exit=1 expect=E-STATES -> KILLED",
         "[N3] 删除字段 F07（软删除）: exit=1 expect=E-FIELDS -> KILLED",
         "[N4] 删除管理层复核网关: exit=1 expect=E-GW-COUNT -> KILLED",
         "[N5] 删除「有效投诉」触发条件: exit=1 expect=E-PAUSE-TRIGGER -> KILLED",
         "[N6] 删除 S15→S14 退出边: exit=1 expect=E-S15-PATH -> KILLED",
-        "negative: 6/6 KILLED"
+        "[N7] 向文档注入 U+FFFD（编码破坏）: exit=1 expect=E-ENCODING -> KILLED",
+        "negative: 7/7 KILLED"
+      ]
+    },
+    {
+      "name": "check",
+      "command": "python scripts/check_delivery.py --root . --full --json artifacts/check-report.json",
+      "exit_code": 0,
+      "duration_s": 0.3,
+      "output_tail": [
+        "checked=107 failed=0",
+        "PASS: all structural assertions satisfied"
       ]
     },
     {
@@ -82,9 +82,9 @@
       "name": "clean-copy",
       "command": "python scripts/check_delivery.py --root <clean-copy> --full",
       "exit_code": 0,
-      "duration_s": 0.3,
+      "duration_s": 0.31,
       "output_tail": [
-        "checked=106 failed=0",
+        "checked=107 failed=0",
         "PASS: all structural assertions satisfied"
       ]
     },
@@ -101,17 +101,17 @@
       "name": "evidence",
       "command": "python tools/write_evidence.py",
       "exit_code": 0,
-      "duration_s": 0.11,
+      "duration_s": 0.12,
       "output_tail": [
         "[evidence] status=PASS visual=PASS -> <repo>\\03-EVIDENCE.md"
       ]
     }
   ],
   "counts": {
-    "checks_total": 106,
+    "checks_total": 107,
     "checks_failed": 0,
-    "negative_killed": 6,
-    "negative_total": 6,
+    "negative_killed": 7,
+    "negative_total": 7,
     "numbers_matched": 13,
     "numbers_total": 13,
     "render_texts": 128,
@@ -125,7 +125,7 @@
     "png": {
       "width": 6000,
       "height": 4100,
-      "bytes": 696885
+      "bytes": 696455
     },
     "pdf": {
       "pages": 1,
@@ -133,20 +133,20 @@
         1684.08,
         1151.03992
       ],
-      "bytes": 350963
+      "bytes": 350960
     }
   },
   "hashes": {
-    "diagram/resource-onboarding-swimlane.drawio": "df03bb2abaa208046bf10a735abf7af3d5bbbdf7fc37c894571f6910cf9c4d03",
-    "diagram/resource-onboarding-swimlane.svg": "dc946262f0a55b84442b6be5259bc57796366b02c321df493509b609a9f0d789",
-    "diagram/resource-onboarding-swimlane.png": "932f6061f60280cb269e2cecbb454c1749703a0b1d1551d534e5108aea3599ba",
-    "diagram/resource-onboarding-swimlane.pdf": "76037a3c8ab8e8e59e2aef63411da65dd17d93bdf4c3fba6a85002e0f90d6dbc",
-    "docs/step-table.md": "2ceba2c178870d29c0a74a562e2a7c7f7ded77d4255362e9804a672d7199f7a6",
-    "docs/state-enum.md": "30d7cdd97d9e076ae8d4512cfea8f72272fedb3420dd8405e8c32b877da62737",
-    "docs/catalog-fields.md": "508bd7a56045460164ec6bc33ea692f927f950dce9a4533c2358ee6da3b99590",
+    "diagram/resource-onboarding-swimlane.drawio": "d15a16e915a1cc31c0e605aac35fc52cc32d411d33e88f5c5726a27ce7429a6b",
+    "diagram/resource-onboarding-swimlane.svg": "187e7890b382b03a5698e9ccede81c16e9f2174c955a8034e50574c74f5fecf5",
+    "diagram/resource-onboarding-swimlane.png": "d8df2994c75f89c96bf1a82f14764593f0bf3d9eece76787d3825d9eb8f1d102",
+    "diagram/resource-onboarding-swimlane.pdf": "cd8d453b50e54d98aaedc423142788dd089765f423cf3a8708f5bbdb72d176cb",
+    "docs/step-table.md": "3c90c9ba5a34eea6ea3185cfda695dc453eedcebebbc05af5ef4c77f2a1b0636",
+    "docs/state-enum.md": "09fa9810cd64043337c11484f20aa7cb5926ab46f2570aceda5a4eaffc72c00d",
+    "docs/catalog-fields.md": "f556d02b17138e187aedd68045ee97819c3bc24ebd06a6d4094707b4917e193a",
     "docs/s1-intake-report.md": "71f42e331e39206adb551a2e82f872d4744279abd0e581a5746f76f45f324178",
-    "docs/METRICS.json": "ed65d91a7cc80b3761785aca463f791fb5ceaf2474f307155ffd2dbceea5f33e",
-    "README.md": "7f0440937d899add72582cd0cf4a05a0d00536136df17da6b344b7fce504d03c"
+    "docs/METRICS.json": "908faa5b72cd29576e880777998a87aaef9bb3c0849eb794db3e90d48f5a4b4e",
+    "README.md": "24093747eaccad840f24ffa7f2f408aebbdebcceee75bdd5b260ec9a1d1c85a7"
   },
-  "tree_hash_excluding_artifacts": "1ffbe6877dfd4f11e3e21c21b6ec9cc3d124f9a5fa81a8ed41870acf2f2d0e8d"
+  "tree_hash_excluding_artifacts": "de1241d423021abf0498d6d7808102f489c6abdf2e977f2c670362b24dadca88"
 }

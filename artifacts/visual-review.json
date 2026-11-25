@@ -1,8 +1,8 @@
 {
-  "reviewed_at": "2026-11-25T21:05:00+08:00",
+  "reviewed_at": "2026-11-25T23:15:00+08:00",
   "image": "diagram/resource-onboarding-swimlane.png",
-  "image_sha256": "932f6061f60280cb269e2cecbb454c1749703a0b1d1551d534e5108aea3599ba",
-  "method": "6000x4100 PNG full view + 2x crops (left, right, middle, footer); draw.io 32.7.4 export cross-check",
+  "image_sha256": "d8df2994c75f89c96bf1a82f14764593f0bf3d9eece76787d3825d9eb8f1d102",
+  "method": "v1.0.1 6000x4100 PNG full view + 2x crops; layout unchanged from v1.0.0, header version re-checked",
   "reviewer": "Hermes（生产方自检，非独立审核）",
   "conclusion": "PASS",
   "checks": [
@@ -44,7 +44,7 @@
     {
       "item": "页眉页脚",
       "result": "PASS",
-      "note": "标题、文档号、版本、虚构数据徽标、图例、4 条脚注齐全"
+      "note": "标题、文档号、版本 v1.0.1、虚构数据徽标、图例、4 条脚注齐全"
     },
     {
       "item": "已知 minor",

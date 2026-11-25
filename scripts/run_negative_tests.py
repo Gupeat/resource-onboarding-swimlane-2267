@@ -25,8 +25,9 @@ REPORT = os.path.join(ROOT, "artifacts", "negative-report.json")
 
 
 def run_check(root):
+    env = dict(os.environ, PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
     p = subprocess.run([sys.executable, CHECK, "--root", root],
-                       capture_output=True, text=True, encoding="utf-8", errors="replace")
+                       capture_output=True, text=True, encoding="utf-8", errors="replace", env=env)
     return p.returncode, p.stdout + p.stderr
 
 
@@ -83,6 +84,12 @@ def mutate_drawio_remove_edge(root, edge_id):
     tree.write(p, encoding="utf-8", xml_declaration=True)
 
 
+def mutate_text_append(root, rel, text):
+    p = os.path.join(root, *rel.split("/"))
+    with open(p, "a", encoding="utf-8") as f:
+        f.write(text)
+
+
 def mutate_svg_text(root, old, new):
     p = os.path.join(root, "diagram", "resource-onboarding-swimlane.svg")
     s = open(p, encoding="utf-8").read()
@@ -128,6 +135,12 @@ CASES = [
         "name": "删除 S15→S14 退出边",
         "apply": lambda root: mutate_drawio_remove_edge(root, "e24"),
         "expect": "E-S15-PATH",
+    },
+    {
+        "id": "N7",
+        "name": "向文档注入 U+FFFD（编码破坏）",
+        "apply": lambda root: mutate_text_append(root, "docs/step-table.md", "\ufffd"),
+        "expect": "E-ENCODING",
     },
 ]
 

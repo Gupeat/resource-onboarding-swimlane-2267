@@ -6,7 +6,7 @@ diagram, the drawio file and the three tables cannot drift apart.
 No third-party imports; Python 3.11+ stdlib only.
 """
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 TASK_ID = "2267"
 TASK_CODE = "S1-BP-025"
 DOC_TITLE = "资源方入库审核与资源目录维护"
